@@ -1,11 +1,16 @@
 package com.showbooking;
 
 import com.showbooking.Service.BookingService;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.HashMap;
 import java.util.Map;
+
+@SpringBootApplication
 public class ShowBookingSystemApplication {
     public static void main(String[] args) {
+        SpringApplication.run(ShowBookingSystemApplication.class, args);
         BookingService service = new BookingService();
 
         service.registerShow("TMKOC", "Comedy");
@@ -30,6 +35,7 @@ public class ShowBookingSystemApplication {
         service.showAvailByGenre("Comedy");
 
         service.trendingShow();
+
 
     }
 }
